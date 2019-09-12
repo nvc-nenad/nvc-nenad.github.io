@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Montserrat|Source+Code+Pro&display=swap:400,700,400italic");
+
+$purple: #713e94;
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Yanone Kaffeesatz";
+  font-weight: normal;
+  margin: 5px;
+}
+.remark-code,
+.remark-inline-code {
+  font-family: "Source Code Pro", monospace;
+  text-align: left;
+}
+.javascript {
+  padding: 1em !important;
+}
+#slide-homepage {
+  background: $purple;
+  color: white;
+}
+.two-columns {
+  display: grid;
+  grid-template: 1fr / 1fr 4fr;
+  height: 100%;
+  padding: 0;
+  .left {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: $purple;
+    color: white;
+    padding: 0.75em;
+  }
+  .right {
+    padding: 0 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    p {
+      margin: 1em 0;
+      width: 100%;
+    }
+    .list {
+      li {
+        margin: 1em 0;
+        text-align: left;
+      }
+    }
+  }
+}
