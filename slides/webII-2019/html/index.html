@@ -25,7 +25,7 @@ name: agenda
 .right[.list[
 1. HTML5 and CSS3
 2. Development Environment Setup
-3. SASS syntax, Sass preprocessor setup and normalize.css
+3. SCSS syntax, SASS preprocessor setup and normalize.css
 4. Flexbox in CSS3
 5. CSS3 Grid
 6. CSS3 animations and transitions and Animate.css
@@ -52,7 +52,172 @@ class:two-columns
 
 * Basic overview of CSS. You should be already familiar with CSS
 ]
+---
+.small.no-scroll[
+```html
+<!DOCTYPE HTML>
+<html lang="en">
 
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Your Website</title>
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<ul>
+				<li>Your menu</li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section>
+	
+		<article>
+			<header>
+				<h2>Article title</h2>
+				<p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a> - <a href="#comments">6 comments</a></p>
+			</header>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+		</article>
+		
+		<article>
+			<header>
+				<h2>Article title</h2>
+				<p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a> - <a href="#comments">6 comments</a></p>
+			</header>
+			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+		</article>
+		
+	</section>
+
+	<aside>
+		<h2>About section</h2>
+		<p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+	</aside>
+
+	<footer>
+		<p>Copyright 2009 Your name</p>
+	</footer>
+
+</body>
+
+</html>```
+]
+---
+class: center, top
+
+```html
+<header></header>```
+
+.footnote[
+https://html.com/tags/header/
+]
+
+The `<header>` element is used to identify content that precedes the primary content of the web page and often contains website branding, navigation elements, search forms, and similar content that is duplicated across all or most pages of a website.
+#### As a page header
+Typically, when the `<header>` element is used as a page header, it contains the site's title or logo (or both) and the main site navigation.
+    
+```html
+<body>
+  <header>
+  <a src="/" id="logo">Site Title</a>
+  <nav>
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav> 
+  </header>
+<main>...</main>
+<footer>...</footer>
+</body>```
+
+---
+
+.mt-1[
+```html
+<nav></nav>```
+]
+
+.footnote[
+https://html.com/tags/nav/
+]
+
+The `<nav>` element identifies a group of navigation links. Links in a `<nav>` element may point to other webpages or to different sections of the same webpage.
+
+Code Example:
+
+```html
+<nav>
+  <a href="/flamingo-facts/">Flamingo Facts</a> | 
+  <a href="/flamingo-food/">Flamingo Food</a> | 
+  <a href="/flamingo-species/">Flamingo Species</a> | 
+  <a href="/flamingo-habitat/">Flamingo Habitat</a> | 
+  <a href="/flamingo-mail/">Contact Us</a> 
+</nav>```
+
+---
+
+```html
+<aside></aside>```
+
+.footnote[
+https://html.com/tags/aside/
+]
+
+The `<aside>` element is used to identify content that is related to the primary content of the webpage, but does not constitute the primary content of the page. Author information, related links, related content, and advertisements are exampes of content that may be found in an aside element.
+
+Any of the following may be valid uses of the `<aside>` element:
+
+* bibliography or endnotes
+* comments
+* pull quotes
+* editorial sidebars
+* additional information
+* wbebsite sidebars unrelated to the content
+
+The following are most likely not good uses of the <aside> element:
+* article 
+* post 
+* data (byline, publication date, etc.)
+* post-specific navigation, such as next and previous or related posts
+
+---
+
+### Code Example
+```html
+<!-- Several potential placements for <aside> -->
+
+<body>
+  <main>
+    <article>
+      <header>
+        <h1>Title of Article</h1>
+        <!-- Post Data: Byline, dateline -->
+      </header>
+      <main>
+      <!-- Article Content -->
+        <aside><!-- Pull Quote --></aside>
+      </main>
+      <aside>
+        <!-- Comment Section -->
+      </aside>
+      <footer>
+        <!-- Post Date: Tags, Categories, Navigation -->
+      </footer>
+    </article>
+  </main>
+  <aside>
+    <!-- Website sidebar: Advertising, Post Index, Login Forms -->
+  </aside>
+</body>```
+
+
+Read more: https://html.com/tags/aside/#ixzz5zT1VIAKC
 
     </textarea>
     <script src="../js/remark.min.js"></script>
