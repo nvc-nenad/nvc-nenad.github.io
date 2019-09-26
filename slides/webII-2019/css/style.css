@@ -129,4 +129,8 @@ p {
 .medium code {
   font-size: 0.75em;
 }
+
+.medium img {
+  width: 350px;
+}
 /*# sourceMappingURL=style.css.map */
