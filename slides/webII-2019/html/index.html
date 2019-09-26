@@ -216,8 +216,64 @@ The following are most likely not good uses of the <aside> element:
   </aside>
 </body>```
 
+---
 
-Read more: https://html.com/tags/aside/#ixzz5zT1VIAKC
+.mt-1[
+```html
+<main></main>```
+]
+
+.footnote[
+https://html.com/tags/main/
+]
+
+The `<main>` element is a structural and semantic element that defines the main section of a page where the content appears. Similar elements include `<article>`, which denotes an article within an HTML file, and `<aside>`, which describes a note or comment. The `<main>` section is also useful when non-standard devices, such as screen readers, interpret the content of your page. It allows the screen reading device to detect and find the important content rapidly, while it skips over the code at the top of the file. `<main>` is one of 9 structural tags that were introduced in the HTML 5 specification.
+
+  ### Usage
+
+  The `<main>` element can only be used once in each HTML file. It is followed by a closing tag, `</main>`, which should be placed at the end of the content. Both tags must be used outside other structural elements such as `<head>` and its closing tag, and `<footer>`and its closing tag. They cannot overlap them, or sit within them.
+
+---
+
+.mt-1[
+```html
+<footer></footer>```
+]
+
+.footnote[
+https://html.com/tags/footer/
+]
+
+The `<footer>` element is a structural element used to identify the footer of a page, document, article, or section. A `<footer>` typically contains copyright and authorship information or navigational elements pertaining to the contents of the parent element.
+
+### Using `<footer>`
+
+The obvious place for the `<footer>` element is at the bottom of a web page. Most sites have a footer (with copyright, contact, and other info), and now, thanks to HTML5, you can create this with the semantic-meaningful `<footer>` element instead of a meaningless `<div>`.
+
+The important thing to remember is that the `<footer>` is related to its parent element. If it inside an `<article>` element, then it is the footer of that article. If it is the last element inside the `<body>` element, then it is the footer of the page as a whole.
+
+---
+
+One of the most common HTML5 sematic tags:
+
+```html
+<article>
+<aside>
+<details>
+<figcaption>
+<figure>
+<footer>
+<header>
+<main>
+<mark>
+<nav>
+<section>
+<summary>
+<time>
+```
+
+Please, take time to learn more about the HTML5 tags. The complete list of all HTML tags with short description:
+https://html.com/tags/
 
     </textarea>
     <script src="../js/remark.min.js"></script>
