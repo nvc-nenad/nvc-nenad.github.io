@@ -275,6 +275,80 @@ One of the most common HTML5 sematic tags:
 Please, take time to learn more about the HTML5 tags. The complete list of all HTML tags with short description:
 https://html.com/tags/
 
+---
+
+### Adding external CSS file
+
+In this class, the expectation is that you are familiar with basics of CSS and how to use it in your HTML pages.
+We'll quickly go over what we'll need to start.
+
+* Create a css file inside your css folder of your project. You can name it anything you want. In example here, it is _myStyle.css_
+
+* Create a link element in the HTML page’s head area to define the link between the HTML and CSS pages.
+
+.medium.no-scroll[
+```html
+<link rel = "stylesheet" type = "text/css" href = "css/myStyle.css" />
+```
+]
+
+* classes
+
+The _.class_ selector selects elements with a specific class attribute. Example how to select and style all elements with `class="intro"`. The HTML: 
+.medium.no-scroll[
+```html
+<p class="intro">My best friend is Mickey.</p>
+```
+]
+The CSS: 
+.medium.no-scroll[
+```css
+.intro {
+  color: red;
+}
+```
+]
+
+---
+
+* ids 
+
+The #id selector styles the element with the specified id.
+
+```html 
+<div class="intro">
+    <p id="firstname">My name is Donald.</p>
+</div>
+```
+
+The CSS:
+```css
+#firstname {
+  background-color: yellow;
+}
+```
+
+* Create and name a javascript file inside /js folder. Then, include it as the last tag in your `<body>` tag.
+
+Example: 
+
+```html
+<body>
+  ... 
+  ... 
+  ...
+  <script src="myScript.js"></script>
+</body>
+```
+
+---
+
+If you feel like you need more refreshing on your CSS, please do that for next class since we will be moving along to do advanced css techniques etc.
+
+You can find additional resources in the class module plus some useful links here:
+
+- https://www.youtube.com/watch?v=J35jug1uHzE
+- https://www.quackit.com/css/tutorial/css_introduction.cfm
     </textarea>
     <script src="../js/remark.min.js"></script>
     <script>
