@@ -7,6 +7,7 @@ $purple: #713e94;
 }
 .remark-slide-content {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 #slide-homepage {
@@ -120,5 +121,10 @@ p {
 .medium {
   img {
     width: 350px;
+  }
+}
+.logo {
+  img {
+    width: 50px;
   }
 }

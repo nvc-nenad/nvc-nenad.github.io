@@ -9,6 +9,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
 
@@ -159,5 +163,9 @@ p {
 
 .medium img {
   width: 350px;
+}
+
+.logo img {
+  width: 50px;
 }
 /*# sourceMappingURL=style.css.map */
