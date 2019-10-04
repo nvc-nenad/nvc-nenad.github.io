@@ -4,11 +4,43 @@ $purple: #713e94;
 
 .remark-slide {
   display: flex;
+  &:after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    height: 10px;
+    background: #713e94;
+  }
+  &:before {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 10px;
+    background: #713e94;
+  }
 }
 .remark-slide-content {
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: 18px;
+  p {
+    margin: 10px 0;
+  }
+}
+li {
+  p {
+    strong {
+      color: #713e94;
+      font-style: italic;
+    }
+  }
 }
 #slide-homepage {
   height: 100%;
