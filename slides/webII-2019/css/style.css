@@ -43,6 +43,15 @@
   margin: 10px 0;
 }
 
+.remark-slide-content h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 li p strong {
   color: #713e94;
   font-style: italic;
@@ -199,5 +208,6 @@ p {
 
 .logo img {
   width: 50px;
+  margin: 0 10px;
 }
 /*# sourceMappingURL=style.css.map */

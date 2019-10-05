@@ -33,6 +33,10 @@ $purple: #713e94;
   p {
     margin: 10px 0;
   }
+  h3 {
+    display: flex;
+    align-items: center;
+  }
 }
 li {
   p {
@@ -158,5 +162,6 @@ p {
 .logo {
   img {
     width: 50px;
+    margin: 0 10px;
   }
 }
