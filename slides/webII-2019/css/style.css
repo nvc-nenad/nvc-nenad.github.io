@@ -210,4 +210,10 @@ p {
   width: 50px;
   margin: 0 10px;
 }
+
+#slide-homepage h3 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 /*# sourceMappingURL=style.css.map */
