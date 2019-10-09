@@ -170,3 +170,7 @@ p {
     justify-content: center;
   }
 }
+.side-by-side {
+  display: flex;
+  justify-content: space-around;
+}

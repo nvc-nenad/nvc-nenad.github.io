@@ -216,4 +216,12 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.side-by-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
 /*# sourceMappingURL=style.css.map */
