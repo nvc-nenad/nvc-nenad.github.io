@@ -3,6 +3,7 @@
   <head>
     <title>Web Design II</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
@@ -66,6 +67,273 @@ Setup your project in Visual Studio Code as below:
 ]
 
 `main.scss` is the file where you write your scss rules and with help of `Live Sass Compiler` it gets compiled in `main.css` that you will include in your HTML markup.
+
+---
+
+### Implement normalize.css
+
+`Normalize.css` makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
+
+.medium[![](../../../img/normalize.png)]
+
+Download normalize.css from here: https://necolas.github.io/normalize.css/ and save it in your project inside `styles/vendor` folder and name it as `_normalize.scss`.
+
+We are saving it with the `_` as in scss is called partial and we import it as the very first `import` in our `main.scss` file as below:
+```css
+@import "./vendor/normalize.scss";
+```
+
+---
+
+### Mobile First Approach
+
+.side-by-side[
+The mobile-first approach is exactly as it sounds: designing for the smallest screen and working your way up. It is one of the best strategies to create either a responsive or adaptive design.<br/>
+Per [PerficientDigital](https://www.perficientdigital.com/insights/our-research/mobile-vs-desktop-usage-study) in US in 2018 there was `58%` of total web visit via Mobile device, so it makes sense to definitelly design things with mobile first approach.<br/><br/>Once your done with the mobile view, you can increase the device width and adjust accordingly.
+Here is example of how we will setup our starting point media queries to adjust for medium and large screens.
+
+<video loop autoplay width="200" height="320" muted>
+  <source src="../../../img/mobile-scroll.mp4" type="video/mp4">
+</video>
+]
+
+
+.medium.no-scroll[
+```css 
+// Medium screens and up
+@media (min-width: 768px) {
+  .container {
+    background-color: yellow;
+  }
+}
+
+// Big screens
+@media (min-width: 1024px) {
+  .container {
+    background-color: navy;
+  }
+}
+```
+]
+
+---
+
+### Install Koala (Sass pre-processor) or VS Code extension for Sass
+
+For this class it is **recommended** (but not required) to use Visual Studio Code extension `Live Sass Compiler`:
+
+.large[![](../../../img/live-sass.png)]
+
+In case you are using different IDE that doesn't have extension like Live Sass Compiler, please install the `Koala` application http://koala-app.com/ to compile your scss files.
+Make sure to setup output folder to be `styles` folder in the root of your project.
+
+---
+
+### Basic SCSS syntax overview
+
+SCSS stands for Sassy CSS. The SCSS syntax is a newer syntax that uses block formatting like that used in CSS. SCSS uses braces to denote code blocks and semicolons to separate lines within a block.
+
+Some developers prefer this syntax, as it is more closely aligned to the CSS syntax.
+
+SCSS files are typically saved with a .scss extension.
+
+.medium.no-scroll[
+```scss
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { 
+    display: inline-block; 
+    }
+
+  a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: orange;
+  }
+}
+```
+]
+
+---
+
+### Variables
+
+Variables can help keep things consistent throughout a website. Instead of repeating the same values across many different properties, you can simply set a variable, then refer to it whenever you need to. 
+
+If you need to change the value, you only need to do it in one place.
+
+.medium.no-scroll[
+```scss
+$primary-color: #fffff;
+$secondary-color: #414141;
+
+body {
+  color: $primary-color;
+  background: $secondary-color;
+}
+```
+]
+
+---
+
+### Partials
+
+Sass allows you to create partial Sass files that you can include in other Sass files. This enables you to reference information in another file. This helps you to modularize your CSS so that it's easier to maintain.
+
+* We create a file called `_colors.scss` with the following contents:
+
+.medium.no-scroll[
+```scss
+$primary-color: #fffff;
+$secondary-color: #414141;
+```
+]
+
+* Now we include that file in our main Sass file. So our main Sass file called `style.scss` looks like this:
+
+.medium.no-scroll[
+```scss
+@import "colors";
+
+body {
+  color: $primary-color;
+  background: $secondary-color;
+}
+```
+]
+
+Note that we dropped the leading underscore (_) and the file extension (.scss). No need to include those — Sass knows what we mean.
+
+---
+
+### Mixins
+
+In Sass, a mixin allows you to create groups of CSS declarations that you can reuse throughout your CSS. This helps reduce the amount of code you need to write, as you write it once, and then reference it where ever you need.
+
+## How to Create and Use Mixin
+
+To create a mixin you use the @mixin directive and give it a name.
+Once you've created the mixin, you can reference it as a CSS declaration with @include followed by the name of the mixin.
+A common use for mixins is vendor prefixes.
+
+.side-by-side[
+.medium.no-scroll[
+```scss
+@mixin border-radius() {
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  border-radius: 7px;
+}
+
+aside { 
+  border: 1px solid orange;
+  @include border-radius(); 
+  }
+```
+]
+
+.medium.no-scroll[
+```scss
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+aside { 
+  border: 1px solid orange;
+  @include border-radius(7px); 
+  }
+```
+]]
+
+.medium.no-scroll[
+```scss
+aside {
+  border: 1px solid orange;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  border-radius: 7px; }
+```
+]
+
+---
+
+### `darken`&nbsp;and&nbsp;`lighten`&nbsp;example
+
+.medium.no-scroll[
+```scss
+@mixin blue-btn {
+  background-color: $primary_btn_color;
+  color: white;
+  border-radius: 5px;
+  margin: 2px;
+  padding: 1em;
+  font-size: 1em;
+  &:hover {
+    background-color: darken($primary_btn_color,5%);
+    cursor: pointer;
+  }
+```
+]
+
+And then use it as:
+
+.medium.no-scroll[
+```scss
+.primary-btn {
+  @include blue-btn;
+ }
+ ```
+ ]
+
+`lighten` is used by the same syntax as `darken`. Very handy technique for theming.
+
+---
+
+### Import your Google Fonts in scss partial
+
+Create `_typography.scss` partial file under `partials` folder.
+Grab the import code snippet like in the example for Montserrat font:
+https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat
+
+.medium[![](../../../img/google-fonts.png)]
+
+import the google fonts and set the `font-family` in your custom variable:
+
+.medium.no-scroll[
+```scss
+@import url("https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat");
+
+$primary-font: "Montserrat", sans-serif;
+ ```
+ Don't forget to import your partial file in your main scss file. (Same like we did for colors earlier)
+ ]
+
+---
+
+### Start your project design
+
+We will use `Figma` for design and prototype of our Project Webpage.
+
+Register on https://www.figma.com/ (FREE) and start exploring the tools. 
+
+You can use Figma in the browser (Chrome recommended) or as a standalone application (download: https://www.figma.com/downloads/)
+
+Very similar to photoshop so you should be able to pick up immidatelly. 
+
+Start working on your design.
+
+.large.center[![](../../../img/figma.png)]
 
     </textarea>
     <script src="../js/remark.min.js"></script>
