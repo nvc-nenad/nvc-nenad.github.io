@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Design II</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+name: homepage
+
+# Web Design II
+### Fall 2019 - Flex II
+#### Instructor: Nenad Manoilov
+
+---
+class: two-columns
+name: agenda 
+
+.left[
+  ## Course Overview
+]
+.right[.list[
+1. ~~.link[[HTML5 and CSS3](https://nvc-nenad.github.io/slides/webII-2019/html/#1)]~~
+2. ~~.link[[Development Environment Setup](https://nvc-nenad.github.io/slides/webII-2019/dev-setup/#1)]~~
+3. ~~.link[[SCSS syntax, SASS preprocessor setup and normalize.css](https://nvc-nenad.github.io/slides/webII-2019/scss-setup/#1)]~~
+4. **Flexbox in CSS3**
+5. CSS3 Grid
+6. CSS3 animations and transitions and Animate.css
+7. Using CSS Frameworks - Bootstrap 4
+8. Adding JavaScript and finishing Final Website Project
+]
+]
+---
+class:two-columns
+
+.left[
+  ## Flexbox in CSS3
+]
+.right[
+* Learn about Flexbox in CSS through examples and use cases.
+  
+* Look over some of the basic flex properties.
+
+* Lab time.
+
+]
+
+---
+
+### Flexbox Layout (flexible box).
+
+.full[![](../../../img/flex-diagram.png)]
+
+
+The Flexbox Layout (Flexible Box) module aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word "flex").
+
+Flexbox layout is most appropriate to the components of an application, and small-scale layouts, while the Grid layout is intended for larger scale layouts.
+
+We can set properties for the Parent ( `flex container` ) and properties for the children ( `flex items` )
+
+---
+
+### `display`
+
+This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.
+
+.no-scroll[
+```css 
+.container {
+  display: flex;
+}
+/* or */
+.container {
+  display: inline-flex;
+}
+```
+]
+
+`display: flex` creates a block-level flex container; `display: inline-flex` creates an inline-level flex container. The flex container becomes a flex context for its direct descendants.
+
+---
+
+### The &nbsp; `flex-direction` &nbsp; property
+
+The `flex-direction` property specifies how flex items are placed in the flex container, by setting the direction of the flex container’s main axis. This determines the direction that flex items are laid out in.
+
+.no-scroll[
+```css
+flex-direction: row | row-reverse | column | column-reverse
+```
+]
+
+.xlarge[![](../../../img/flex-direction.jpg)]
+
+---
+
+### The &nbsp; `flex-wrap` &nbsp; property
+
+The `flex-wrap` property controls whether the flex container is single-line or multi-line, and the direction of the cross-axis, which determines the direction new lines are stacked in.
+
+.no-scroll[
+```css
+flex-wrap: nowrap | wrap | wrap-reverse
+```
+]
+
+.xlarge[![](../../../img/flex-wrap.jpg)]
+
+---
+
+### The &nbsp; `flex-flow` &nbsp; property
+
+This is a shorthand for the flex-direction and flex-wrap properties, which together define the flex container's main and cross axes. The default value is `row nowrap`.
+
+example: 
+
+.no-scroll[
+```css
+flex-flow: column wrap
+```
+]
+
+---
+
+### The &nbsp; `justify-content` &nbsp; property
+
+The `justify-content` property aligns flex items along the main axis of the current line of the flex container. Typically it helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.
+
+.medium.no-scroll[
+```css
+justify-content: flex-start | flex-end | center | space-between | space-around
+```
+]
+
+.xlarge[![](../../../img/justify-content.jpg)]
+
+---
+
+### The &nbsp; `align-items` &nbsp; property
+
+The `align-items` property is similar to the `justify-content` property, but instead of aligning flex items in the main axis, `align-items` is used to align flex items in the cross-axis (perpendicular to the main axis).
+
+.medium.no-scroll[
+```css
+align-items: flex-start | flex-end | center | baseline | stretch
+```
+]
+
+.xlarge[![](../../../img/align-items.jpg)]
+
+---
+
+### The &nbsp; `align-content` &nbsp; property
+
+The `align-content` property aligns a flex container’s lines within the flex container when there is extra space in the cross-axis, similar to how `justify-content` aligns individual items within the main-axis. This property has no effect when the flex container has only a single line.
+
+.medium.no-scroll[
+```css
+align-content: flex-start | flex-end | center | space-between | space-around | stretch
+```
+]
+
+---
+
+class: text-center
+
+.full-height-center[![](../../../img/align-content.jpg)]
+
+---
+
+### Properties for the Children (flex items)
+
+## `order`
+
+Flex items are, by default, displayed and laid out in the same order as they appear in the source document. The `order` property can be used to change this ordering.
+
+example: 
+
+.medium.no-scroll[
+```css
+order: 2
+```
+]
+
+.xlarge[![](../../../img/order.png)]
+
+---
+
+## `flex-grow`
+
+The `flex-grow` property sets the flex grow factor of a flex item. A flex grow factor is a <number> which determines how much the flex item will grow relative to the rest of the flex items in the flex container when positive free space is distributed. The initial value is zero (0), and negative numbers are invalid.
+
+example: 
+
+.medium.no-scroll[
+```css
+flex-grow: 2
+```
+]
+
+.xlarge[![](../../../img/flex-grow.jpg)]
+
+---
+
+## `flex-basis`
+
+The `flex-basis` property takes the same values as the `width` property, and sets the flex basis: the initial main size (see concepts and terminology) of the flex item, before free space is distributed according to the flex factorsd.
+
+example: 
+
+.medium.no-scroll[
+```css
+flex-basis: auto | <'width'> // default auto
+```
+]
+
+The auto keyword means "look at my width or height property".
+
+The content keyword means "size it based on the item's content".
+
+---
+
+.center[
+### ![party-emoji](https://nvc-nenad.github.io/img/party-emoji.png) Practice Time ![party-emoji](https://nvc-nenad.github.io/img/party-emoji.png)
+]
+
+Practice some Flex:
+
+https://codepen.io/nvc_manoilov/pen/vYYrjeW?editors=1100
+
+    </textarea>
+    <script src="../js/remark.min.js"></script>
+    <script>
+      var slideshow = remark.create({
+        highlightStyle: "monokai"
+      });
+    </script>
+  </body>
+</html>

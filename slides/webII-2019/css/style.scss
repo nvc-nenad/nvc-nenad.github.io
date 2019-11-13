@@ -168,6 +168,23 @@ p {
     max-height: 300px;
   }
 }
+.xlarge {
+  img {
+    max-height: 400px;
+    margin: 0;
+  }
+}
+.full-height-center {
+  text-align: center;
+  img {
+    max-height: 600px;
+  }
+}
+.full {
+  img {
+    width: 100%;
+  }
+}
 .logo {
   img {
     width: 50px;
@@ -189,6 +206,9 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+pre {
+  margin: 0;
 }
 
 // Medium screens and up
