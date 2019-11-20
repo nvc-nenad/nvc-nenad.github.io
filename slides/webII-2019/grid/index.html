@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Design II</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+name: homepage
+
+# Web Design II
+### Fall 2019 - Flex II
+#### Instructor: Nenad Manoilov
+
+---
+class: two-columns
+name: agenda 
+
+.left[
+  ## Course Overview
+]
+.right[.list[
+1. ~~.link[[HTML5 and CSS3](https://nvc-nenad.github.io/slides/webII-2019/html/#1)]~~
+2. ~~.link[[Development Environment Setup](https://nvc-nenad.github.io/slides/webII-2019/dev-setup/#1)]~~
+3. ~~.link[[SCSS syntax, SASS preprocessor setup and normalize.css](https://nvc-nenad.github.io/slides/webII-2019/scss-setup/#1)]~~
+4. ~~.link[[Flexbox in CSS](https://nvc-nenad.github.io/slides/webII-2019/flex/#1)]~~
+5. **CSS3 Grid**
+6. CSS3 animations and transitions and Animate.css
+7. Using CSS Frameworks - Bootstrap 4
+8. Adding JavaScript and finishing Final Website Project
+]
+]
+---
+class:two-columns
+
+.left[
+  ## Grid in CSS3
+]
+.right[
+* Learn about Grid in CSS through examples and use cases.
+  
+* Look over some of the basic grid properties.
+
+* Lab time.
+
+]
+
+---
+
+### CSS Grid Layout (aka "Grid").
+
+.full[![](../../../img/css-grid.png)]
+
+CSS Grid is a powerful tool that allows for two-dimensional layouts to be created on the web. 
+
+CSS Grid Layout excels at dividing a page into major regions or defining the relationship in terms of size, position, and layer.
+
+---
+
+### `display`
+
+Grid items are placed in rows by default and span the full width of the grid container.
+
+.no-scroll[
+```css 
+.container {
+  display: grid;
+}
+/* or */
+.container {
+  display: inline-grid;
+}
+```
+]
+ 
+---
+
+### Explicit Grid
+
+Explicitly set a grid by creating columns and rows with the grid-template-columns and grid-template-rows properties.
+
+.side-by-side[
+
+.no-scroll[
+```css
+grid-template-rows: 50px 100px;
+```
+]
+
+.large[![](../../../img/grid-template-rows.png)]
+
+]
+
+.side-by-side[
+
+.no-scroll[
+```css
+grid-template-columns: 90px 50px 120px;
+```
+]
+
+.large[![](../../../img/grid-template-columns.png)]
+
+]
+
+---
+
+### Grid Gaps (Gutters)
+
+The grid-column-gap and grid-row-gap properties create gutters between columns and rows.
+
+Grid gaps are only created in between columns and rows, and not along the edge of the grid container 🙌 .
+
+.side-by-side[
+
+.no-scroll[
+```css
+grid-row-gap:    20px;
+grid-column-gap: 5rem;
+```
+]
+
+.large[![](../../../img/gutters.png)]
+
+]
+
+---
+
+### Positioning Items by Grid Line Numbers
+
+Grid lines are essentially lines that represent the start of, the end of, or between column and row tracks.
+Each line, starting from the start of the track and in the direction of the grid, is numbered incrementally starting from 1.
+
+.side-by-side[
+
+.no-scroll[
+```css
+grid-row-start:    2;
+grid-row-end:      3;
+grid-column-start: 2;
+grid-column-end:   3;
+```
+]
+
+.large[![](../../../img/positioning.png)]
+
+]
+
+---
+
+### Spanning Items Across Rows and Columns
+
+Grid items span only one column and row track by default, but can span multiple row and/or column tracks using the same properties to position them.
+
+.side-by-side[
+
+.no-scroll[
+```css
+grid-column-start: 1;
+grid-column-end:   4;
+```
+]
+
+.large[![](../../../img/span.png)]
+
+]
+
+---
+
+### Naming and Positioning Items by Grid Areas
+
+Like grid line names, grid areas can also be named with the grid-template-areas property. Names can then be referenced to position grid items.
+
+.side-by-side[
+
+.no-scroll[
+```css
+grid-template-areas:   "header header"
+                        "content sidebar"
+                        "footer footer";
+grid-template-rows:    150px 1fr 100px;
+grid-template-columns: 1fr 200px;
+```
+]
+
+.large[![](../../../img/grid-area.png)]
+
+]
+
+---
+
+.center[
+### ![party-emoji](https://nvc-nenad.github.io/img/party-emoji.png) Practice Time ![party-emoji](https://nvc-nenad.github.io/img/party-emoji.png)
+]
+
+Practice some Grid:
+
+https://codepen.io/nvc_manoilov/pen/NWKMBqP
+
+    </textarea>
+    <script src="../js/remark.min.js"></script>
+    <script>
+      var slideshow = remark.create({
+        highlightStyle: "monokai"
+      });
+    </script>
+  </body>
+</html>
