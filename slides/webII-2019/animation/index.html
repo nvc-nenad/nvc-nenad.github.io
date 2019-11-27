@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Web Design II</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+  <textarea id="source">
+
+class: center, middle
+name: homepage
+
+# Web Design II
+### Fall 2019 - Flex II
+#### Instructor: Nenad Manoilov
+
+---
+class: two-columns
+name: agenda 
+
+.left[
+  ## Course Overview
+]
+.right[.list[
+1. ~~.link[[HTML5 and CSS3](https://nvc-nenad.github.io/slides/webII-2019/html/#1)]~~
+2. ~~.link[[Development Environment Setup](https://nvc-nenad.github.io/slides/webII-2019/dev-setup/#1)]~~
+3. ~~.link[[SCSS syntax, SASS preprocessor setup and normalize.css](https://nvc-nenad.github.io/slides/webII-2019/scss-setup/#1)]~~
+4. ~~.link[[Flexbox in CSS](https://nvc-nenad.github.io/slides/webII-2019/flex/#1)]~~
+5. ~~.link[[CSS3 Grid](https://nvc-nenad.github.io/slides/webII-2019/grid/index.html#1)]~~
+6. **CSS3 animations and transitions and Animate.css**
+7. Using CSS Frameworks - Bootstrap 4
+8. Adding JavaScript and finishing Final Website Project
+]
+]
+---
+class:two-columns
+
+.left[
+  ## CSS Animations and transitions
+]
+.right[
+* Learn about Animate.css library.
+  
+* Learn about and explore basic css transitions animations. 
+
+* Lab time to play with css animations and transitions.
+
+]
+
+---
+
+### *just-add-water*&nbsp;CSS animations (animate.css)
+
+animate.css is a bunch of cool, fun, and cross-browser animations for you to use in your projects. Great for emphasis, home pages, sliders, and general just-add-water-awesomeness. 
+
+To use animate.css in your website, simply drop the stylesheet into your document's <head>, and add the class animated to an element, along with any of the animation names. That's it! You've got a CSS animated element. Super!
+
+Add to the `<head>` saciton:
+
+
+`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">`
+
+.center[
+<video loop autoplay width="200" height="320" muted>
+    <source src="../../../img/animate.mp4" type="video/mp4">
+  </video>
+]
+
+---
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+To animate an element, add the class `animated` to an element. You can include the class `infinite` for an infinite loop. 
+
+Finally you would add a class that specify what kind of animation you want the element to have. 
+
+Some examples are `bounce`, `pulse`, `zoomInRight`, `slideOutDown` and many more. 
+
+Find the full list of available classes here: https://daneden.github.io/animate.css/
+
+The example:
+
+```css
+<h1 class="animated infinite bounceIn delay-2s">
+  I'm a full animated heading
+</h1>
+```
+
+.center.animated.infinite.bounceIn.delay-2s[
+<h1>I'm a full animated heading</h1>
+]
+
+---
+
+### CSS Transitions
+
+Transitions are the grease in the wheel of CSS transforms. Without a transition, an element being transformed would change abruptly from one state to another. By applying a transition you can control the change, making it smooth and gradual.
+
+No transition:
+<div class="no-transition-box"></div>
+
+With transition:
+<div class="transition-box"></div>
+
+There are two properties that are required in order for the transition to take effect:
+
+`transition-property`
+
+`transition-duration`
+
+```css
+  transition-property: width;
+  transition-duration: 0.5s;
+```
+
+---
+
+##`transition-timing`
+
+The transition-timing-function property allows you to define the speed of the transition over the duration. 
+
+The default timing is `ease`, which starts out slow, quickly speeds up, and then slows down at the end. The other timing options are: `linear`, `ease`, `ease-in`, `ease-out`, and `ease-in-out`.
+
+```css
+transition-timing-function: ease-in;
+```
+
+
+<video loop autoplay width="500" height="400" muted>
+    <source src="../../../img/transition-timing.mp4" type="video/mp4">
+  </video>
+
+---
+
+### CSS transforms
+
+transforms - how to make an element change from one state to another. With the CSS transform property you can `rotate`, `move`, `skew`, and `scale` elements.
+
+.side-by-side[
+
+.no-scroll[
+```css
+.droplet {
+  background: mediumaquamarine;
+  border-radius: 2% 50%;
+  height: 100px;
+  margin: 100px;
+  transition: transform 3s;
+  transition-timing: ease-in-out;
+  width: 100px;
+
+  &:hover {
+    transform: rotate(1080deg);
+  }
+}
+```
+]
+
+<div class="droplet"></div>
+
+]
+
+---
+
+### CSS Animations
+
+The `animation` property in CSS can be used to animate many other CSS properties such as `color`, `background-color`, `height`, or `width`. Each animation needs to be defined with the @keyframes at-rule which is then called with the animation property, like so:
+
+.side-by-side[
+
+```css
+.element {
+  width: 200px;
+  height: 200px;
+  animation: itrotates 5s infinite;
+  background: #7C0C84;
+}
+
+@keyframes itrotates {
+  0% {
+    transform: rotate(0deg);
+    border-radius: 0;
+  }
+  100% {
+    transform: rotate(90deg);
+    border-radius: 50%;
+  }
+}```
+
+<div class="element"></div>
+
+]
+
+---
+
+.center[
+### ![party-emoji](https://nvc-nenad.github.io/img/party-emoji.png) Practice Time ![party-emoji](https://nvc-nenad.github.io/img/party-emoji.png)
+]
+
+Practice some CSS transitions and animations:
+
+https://codepen.io/nvc_manoilov/pen/BaaXoOp?editors=1100
+
+    </textarea>
+  <script src="../js/remark.min.js"></script>
+  <script>
+    var slideshow = remark.create({
+      highlightStyle: "monokai"
+    });
+  </script>
+</body>
+
+</html>
