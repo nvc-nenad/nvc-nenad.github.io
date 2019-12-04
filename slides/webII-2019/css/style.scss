@@ -81,6 +81,7 @@ h4 {
   text-align: left;
   color: #c7254e;
 }
+
 .javascript {
   padding: 1em !important;
 }
@@ -130,7 +131,7 @@ p {
 .footnote {
   right: 0;
   position: fixed;
-  top: 5px;
+  top: 15px;
   font-size: 0.6em;
   padding: 0;
   margin: 0 2em;
@@ -163,6 +164,12 @@ p {
 .medium {
   img {
     width: 350px;
+  }
+}
+.small {
+  img {
+    max-height: 250px;
+    max-width: 95%;
   }
 }
 .large {
@@ -212,7 +219,13 @@ p {
 pre {
   margin: 0;
 }
-
+.smaller {
+  pre {
+    .remark-code {
+      font-size: 0.75em;
+    }
+  }
+}
 // transitions
 
 .no-transition-box {
@@ -255,6 +268,10 @@ pre {
   height: 200px;
   animation: itrotates 5s infinite;
   background: #7C0C84;
+}
+pre {
+  background-color: aliceblue;
+  padding: 10px;
 }
 @keyframes itrotates {
   0% {
