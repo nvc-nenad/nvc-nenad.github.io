@@ -13,7 +13,7 @@ class: center, middle
 name: homepage
 
 # Web Design II
-### Fall 2019 - Flex II
+### <div id="semester"></div>
 #### Instructor: Nenad Manoilov
 
 ---
@@ -238,6 +238,22 @@ https://codepen.io/nvc_manoilov/pen/vYYrjeW?editors=1100
       var slideshow = remark.create({
         highlightStyle: "monokai"
       });
+      const date = new Date();
+// const month = date.toLocaleString('default', { month: 'long' });
+const month = date.getMonth() + 1;
+let season;
+const year = date.getFullYear();
+if (month >= 3 && month <= 5) {
+  season = "Spring";
+} else if (month >= 6 && month <= 8) {
+  season = "Summer";
+} else if (month >= 9 && month <= 11) {
+  season = "Autumn";
+} else {
+  season = "Winter";
+}
+const semesterHeading = document.getElementById('semester');
+semesterHeading.innerText = `${season} ${year}`;
     </script>
   </body>
 </html>
